@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, Button, Modal, StatusBar, ActivityIndicator, Alert, StyleSheet } from 'react-native'
+import { useState } from 'react';
+import Greet from './components/greet'
+import StylingAndInherit from './components/styling-and-inherit';
+import StylingBox from './components/styling-box';
+import AppRnNavigation from './components/rn-bottom-tabs';
+
+const logoImage = require('./assets/adaptive-icon.png')
 
 export default function App() {
+  const [isModalVisible, setModalVisible] = useState(false)
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <AppRnNavigation />
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  normalFont: {
+    fontSize: 20,
+    color: 'black'
+  }
+})
